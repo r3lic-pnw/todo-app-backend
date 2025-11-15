@@ -1,7 +1,8 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const connectDB = require('./config/db');
-const cors = require('cors'); // Import cors
+import express from 'express';
+import dotenv from 'dotenv';
+import connectDB from './config/db.js';
+import cors from 'cors';
+import todoRoutes from './routes/todos.js';
 
 // Load env vars
 dotenv.config({ path: './config/.env' });
@@ -18,7 +19,7 @@ app.use(express.json());
 app.use(cors());
 
 // Mount routers
-app.use('/api/v1/todos', require('./routes/todos'));
+app.use('/api/v1/todos', todoRoutes);
 
 const PORT = process.env.PORT || 5000;
 

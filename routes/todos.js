@@ -1,6 +1,6 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const Todo = require('../models/Todo');
+import Todo from '../models/Todo.js';
 
 // @desc    Get all todos
 // @route   GET /api/v1/todos
@@ -121,4 +121,4 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
